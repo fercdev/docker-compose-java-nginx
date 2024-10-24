@@ -2,18 +2,14 @@ version: '3'
 
 services:
   spring-boot-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: fercdevv/demo-spring-boot-app:latest
     ports:
       - "5000"
     networks:
       - my-red
   nginx:
     container_name: nginx_gateway
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
+    image: fercdevv/demo-nginx:latest
     ports:
       - 8080:80
     depends_on:
